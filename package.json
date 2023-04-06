@@ -1,0 +1,11 @@
+{
+  "name": "Node_Apis",
+  "version": "1.0.0",
+  "description": "node apis",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
