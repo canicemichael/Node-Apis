@@ -1,6 +1,6 @@
-import { EventEmitter } from "node:events";
+import  MyEmitter  from "events";
 
-var em = new EventEmitter();
+var em = new MyEmitter();
 
 //Subscribe FirstEvent
 em.addListener('FirstEvent', function (data) {

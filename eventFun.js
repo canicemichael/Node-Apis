@@ -1,28 +1,27 @@
-import { EventEmitter } from "node:events";
+import MyEmitter from "events";
 
-function LoopProcessor(num) {
-    var e = new EventEmitter();
+function returnWallwx() {
+    let myEmitter = new MyEmitter();
+
+    setTimeout(function() {
+        for (let i = 0; i < 4; i++) {
+            myEmitter.emit('BeforeLoop', i);
     
-    setTimeout(function () {
-        
-        for (var i = 1; i <= num; i++) {
-            e.emit('BeforeProcess', i);
-            
-            console.log('Processing number:' + i);
-            
-            e.emit('AfterProcess', i);
+            console.log("the value of i: "+ i);
+    
+            myEmitter.emit('AfterLoop', i);
         }
-    }
-    , 2000)
+    }, 10);
     
-    return e;
+    return myEmitter;
 }
-var lp = LoopProcessor(3);
 
-lp.on('BeforeProcess', function (data) {
-    console.log('About to start the process for ' + data);
-});
+let wall = returnWallwx();
 
-lp.on('AfterProcess', function (data) {
-    console.log('Completed processing ' + data);
-});
+wall.on('BeforeLoop', function(data){
+    console.log('About to start the process ' + data);
+})
+
+wall.on('AfterLoop', function(data){
+    console.log('After the process ' + data);
+})
