@@ -11,7 +11,7 @@ function returnWallwx() {
     
             myEmitter.emit('AfterLoop', i);
         }
-    }, 10);
+    }, 2000);
     
     return myEmitter;
 }
@@ -19,7 +19,7 @@ function returnWallwx() {
 let wall = returnWallwx();
 
 wall.on('BeforeLoop', function(data){
-    console.log('About to start the process ' + data);
+    console.log('Before start the process ' + data);
 })
 
 wall.on('AfterLoop', function(data){
