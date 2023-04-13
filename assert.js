@@ -12,8 +12,14 @@ function add(a, b) {
 
 let expected = add(1, 2);
 
-assert(expected === 3, "1 + 2 is equal to 3"); // paases
+// assert(expected === 3, "1 + 2 is equal to 3"); // paases
 // it will only through an error when the test fails, that
 // is when the test result is false.
 
-assert.deepEqual([[[1, 2, 3]], 4, 5], [[[1, 2, '3']], 4, 5]); // fails
+// assert.deepEqual([[[1, 2, 3]], 4, 5], [[[1, 2, '3']], 4, 5]); // fails
+
+try {
+    assert.strictEqual(1, 2);
+} catch (err) {
+    console.log(err.operator);
+}
