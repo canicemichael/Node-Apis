@@ -23,6 +23,11 @@ http.createServer((req, res) => {
 
 http.get('http://localhost:8080');
 http.get('http://localhost:8080');
+
+setTimeout( function run(){
+    console.log(asyncLocalStorage);
+}, 2000);
+
 // Prints:
 //   0: start
 //   1: start
