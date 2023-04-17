@@ -7,6 +7,7 @@ const asyncLocalStorage = new AsyncLocalStorage();
 const requestIdMiddleware = (req, res, next) => {
   asyncLocalStorage.run(new Map(), () => {
     asyncLocalStorage.getStore().set("requestId", uuid());
+    asyncLocalStorage.getStore().set("requestId2", uuid());
     next();
   });
 };
@@ -16,6 +17,13 @@ const app = express();
 app.use(requestIdMiddleware);
 
 app.get("/", (req, res) => {
+  const id = asyncLocalStorage.getStore().get("requestId");
+  const id2 = asyncLocalStorage.getStore().get("requestId2");
+  console.log(`[${id} ${id}] request received`);
+  res.send(`[${id} ${id}] request received  so it works`);
+});
+
+app.get("/home", (req, res) => {
   const id = asyncLocalStorage.getStore().get("requestId");
   console.log(`[${id}] request received`);
   res.send(`[${id}] request received  so it works`);
