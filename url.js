@@ -1,3 +1,5 @@
+// WHATWG and Legacy Api are the two most common used url
+// apis with different patterns
 import url from "node:url";
 
 const myURL = new URL("https://user:pass@sub.example.com:8080/p/a/t/h?query=string&abc=xyz#hash");
