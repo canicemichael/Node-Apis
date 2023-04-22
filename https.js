@@ -109,8 +109,10 @@ let request = https.request(
 
     res.on("close", () => {
       console.log("Retrieved all data");
-      console.log(JSON.parse(data));
+      // console.log(JSON.parse(data));
     });
+
+    console.log(res.headers);
   }
 );
 
