@@ -46,6 +46,5 @@ Advantages of TCP/IP Model
 
 
 OSI Model vs TCP/IP Model
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 ![alt text](../images/Screenshot%202023-04-24%20044202.png)
