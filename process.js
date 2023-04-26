@@ -22,7 +22,7 @@ process.on('exit', (code) => {
 
 // console.log(process.uptime().toString() ) ;
 // console.log(process.cpuUsage());
-// console.log("process.argv "+process.argv[0]);
+console.log("process.argv " + process.argv[2]);
 // console.log("process.env " + process.env);
 // console.log("process.cwd " + process.cwd());
 
@@ -35,8 +35,8 @@ const startUsage = cpuUsage();
 const now = Date.now();
 while (Date.now() - now < 500);
 
-console.log( cpuUsage(startUsage));
+// console.log( cpuUsage(startUsage));
 // { user: 514883, system: 11226 }
 
-console.log("memoryUsage: " );
-console.log( process.memoryUsage());
+// console.log("memoryUsage: " );
+// console.log( process.memoryUsage());
